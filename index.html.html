@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moss & Glass | Handmade Terrariums – [Your City]</title>
+<meta name="description" content="Handcrafted terrariums made with love. Shop open terrariums, closed ecosystems, and custom designs. Free local delivery in [Your City].">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  /* ── Reset & Base ───────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --moss:       #3d5a3e;
+    --moss-light: #5a7d5b;
+    --moss-pale:  #eef3ee;
+    --earth:      #8b6b4a;
+    --earth-pale: #f5ede3;
+    --stone:      #6b7c6e;
+    --stone-pale: #f0f2f0;
+    --glass:      rgba(255,255,255,0.82);
+    --text-dark:  #1e2a1f;
+    --text-mid:   #4a5e4b;
+    --text-light: #7a8e7b;
+    --white:      #ffffff;
+    --cream:      #faf8f4;
+    --serif:      'Playfair Display', Georgia, serif;
+    --sans:       'DM Sans', system-ui, sans-serif;
+    --radius:     12px;
+    --radius-lg:  20px;
+    --shadow:     0 4px 24px rgba(61,90,62,.1);
+    --shadow-lg:  0 8px 40px rgba(61,90,62,.15);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text-dark);
+    background: var(--cream);
+  }
+
+  img { display: block; width: 100%; height: auto; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ── Typography ─────────────────────────────────────────── */
+  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; line-height: 1.25; }
+  h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
+  h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+  h3 { font-size: 1.3rem; }
+
+  .eyebrow {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--moss);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-label {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .section-label p {
+    color: var(--text-mid);
+    max-width: 52ch;
+    margin: 0.75rem auto 0;
+    font-size: 1rem;
+  }
+
+  /* ── Layout Helpers ─────────────────────────────────────── */
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 1.5rem; }
+  .section   { padding: 6rem 0; }
+  .section-alt { background: var(--white); }
+  .section-earth { background: var(--earth-pale); }
+  .section-moss  { background: var(--moss-pale); }
+
+  /* ── Buttons ────────────────────────────────────────────── */
+  .btn {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    border-radius: 100px;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    border: 2px solid transparent;
+  }
+  .btn-primary {
+    background: var(--moss);
+    color: var(--white);
+    border-color: var(--moss);
+  }
+  .btn-primary:hover {
+    background: var(--moss-light);
+    border-color: var(--moss-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--moss);
+    border-color: var(--moss);
+  }
+  .btn-outline:hover {
+    background: var(--moss);
+    color: var(--white);
+    transform: translateY(-2px);
+  }
+  .btn-white {
+    background: var(--white);
+    color: var(--moss);
+    border-color: var(--white);
+  }
+  .btn-white:hover {
+    background: var(--moss-pale);
+    transform: translateY(-2px);
+  }
+
+  /* ── Navigation ─────────────────────────────────────────── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--glass);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(61,90,62,.1);
+    padding: 1rem 0;
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--moss);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .nav-logo span { font-size: 1.5rem; }
+  .nav-links {
+    display: flex; align-items: center; gap: 2rem; list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    transition: color 0.18s;
+  }
+  .nav-links a:hover { color: var(--moss); }
+  .nav-cta { margin-left: 1rem; }
+
+  /* Mobile nav toggle */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column; gap: 5px;
+    cursor: pointer; padding: 4px;
+  }
+  .nav-hamburger span {
+    display: block; width: 22px; height: 2px;
+    background: var(--moss); border-radius: 2px;
+    transition: all 0.22s;
+  }
+
+  /* ── Hero ───────────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex; align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #2a3e2b 0%, #3d5a3e 40%, #4f7250 100%);
+  }
+  .hero-bg-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 80%, rgba(255,255,255,0.04) 0%, transparent 40%),
+      radial-gradient(circle at 80% 20%, rgba(255,255,255,0.06) 0%, transparent 40%);
+  }
+  /* Decorative leaf shapes */
+  .hero-leaf {
+    position: absolute;
+    border-radius: 0 80% 0 80%;
+    opacity: 0.08;
+    background: white;
+  }
+  .hero-leaf-1 { width: 300px; height: 300px; top: -60px; right: 10%; transform: rotate(-20deg); }
+  .hero-leaf-2 { width: 180px; height: 180px; bottom: 10%; left: 5%; transform: rotate(30deg); }
+  .hero-leaf-3 { width: 120px; height: 120px; top: 40%; right: 3%; transform: rotate(60deg); }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 700px;
+  }
+  .hero .eyebrow { color: rgba(255,255,255,0.7); }
+  .hero h1 { color: var(--white); margin-bottom: 1.25rem; }
+  .hero h1 em { font-style: italic; color: #a8d4a9; }
+  .hero p {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.15rem;
+    max-width: 46ch;
+    margin-bottom: 2.25rem;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 3rem; right: 5%;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem 1.5rem;
+    z-index: 2;
+    text-align: center;
+    min-width: 140px;
+  }
+  .hero-badge strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--moss);
+    line-height: 1;
+  }
+  .hero-badge span { font-size: 0.8rem; color: var(--text-mid); }
+
+  /* ── Features Bar ───────────────────────────────────────── */
+  .features-bar { padding: 2.5rem 0; background: var(--white); border-bottom: 1px solid var(--stone-pale); }
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .feature-item { display: flex; align-items: center; gap: 1rem; }
+  .feature-icon {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--moss-pale);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .feature-item strong { display: block; font-size: 0.95rem; color: var(--text-dark); }
+  .feature-item span   { font-size: 0.85rem; color: var(--text-light); }
+
+  /* ── Product Cards ──────────────────────────────────────── */
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+
+  .product-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .product-card-image {
+    height: 240px;
+    position: relative;
+    overflow: hidden;
+    background: var(--moss-pale);
+  }
+  /* Placeholder illustration for demo */
+  .product-card-image .img-placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 4rem;
+    background: linear-gradient(160deg, var(--moss-pale) 0%, #dce8dc 100%);
+  }
+  .product-card-image img { object-fit: cover; height: 100%; }
+
+  .care-badge {
+    position: absolute; top: 0.75rem; right: 0.75rem;
+    background: var(--white);
+    border-radius: 100px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  }
+  .care-badge.easy   { color: #2e7d32; background: #e8f5e9; }
+  .care-badge.medium { color: #b45309; background: #fef3c7; }
+  .care-badge.low    { color: #1565c0; background: #e3f2fd; }
+
+  .product-card-body { padding: 1.5rem; }
+  .product-card-body h3 { margin-bottom: 0.4rem; font-size: 1.2rem; }
+  .product-card-body .product-desc { color: var(--text-mid); font-size: 0.9rem; margin-bottom: 1rem; }
+  .product-meta { display: flex; gap: 1rem; margin-bottom: 1.25rem; }
+  .product-meta span {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    display: flex; align-items: center; gap: 0.3rem;
+  }
+  .product-card-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 1rem; border-top: 1px solid var(--stone-pale);
+  }
+  .price {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--moss);
+  }
+
+  /* ── Why Choose Us ──────────────────────────────────────── */
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
+  .why-card {
+    text-align: center;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    background: var(--white);
+    border: 1px solid rgba(61,90,62,.08);
+    transition: border-color 0.22s;
+  }
+  .why-card:hover { border-color: var(--moss-light); }
+  .why-icon {
+    width: 64px; height: 64px;
+    margin: 0 auto 1.25rem;
+    background: var(--moss-pale);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem;
+  }
+  .why-card h3 { margin-bottom: 0.5rem; }
+  .why-card p  { color: var(--text-mid); font-size: 0.9rem; }
+
+  /* ── Custom Orders ──────────────────────────────────────── */
+  .custom-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .custom-visual {
+    aspect-ratio: 1;
+    max-width: 460px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(160deg, #2a3e2b 0%, #4f7250 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 8rem;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+  }
+  .custom-visual::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.06) 0%, transparent 60%);
+  }
+  .custom-steps { list-style: none; margin: 1.5rem 0 2rem; }
+  .custom-steps li {
+    display: flex; gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--stone-pale);
+  }
+  .custom-steps li:last-child { border: none; }
+  .step-num {
+    width: 28px; height: 28px; flex-shrink: 0;
+    background: var(--moss);
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; font-weight: 500;
+  }
+  .custom-steps strong { display: block; font-size: 0.95rem; }
+  .custom-steps span   { font-size: 0.85rem; color: var(--text-light); }
+
+  /* ── Care Tips ──────────────────────────────────────────── */
+  .care-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+  .care-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    border-left: 4px solid var(--moss);
+    box-shadow: 0 2px 12px rgba(61,90,62,.06);
+  }
+  .care-card .care-icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
+  .care-card h4 { margin-bottom: 0.4rem; font-size: 1.05rem; }
+  .care-card p  { color: var(--text-mid); font-size: 0.88rem; }
+
+  /* ── Testimonials ───────────────────────────────────────── */
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .testimonial-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  .testimonial-card::before {
+    content: '"';
+    position: absolute; top: -0.25rem; left: 1.25rem;
+    font-family: var(--serif);
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--moss-pale);
+  }
+  .stars { color: #f59e0b; font-size: 0.9rem; margin-bottom: 0.75rem; }
+  .testimonial-card p { color: var(--text-mid); font-size: 0.92rem; font-style: italic; margin-bottom: 1.25rem; }
+  .reviewer { display: flex; align-items: center; gap: 0.75rem; }
+  .reviewer-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--moss-pale);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 500; font-size: 0.85rem;
+    color: var(--moss);
+  }
+  .reviewer strong { display: block; font-size: 0.9rem; }
+  .reviewer span   { font-size: 0.8rem; color: var(--text-light); }
+
+  /* ── Contact CTA ────────────────────────────────────────── */
+  .contact-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+  .contact-left {
+    background: var(--moss);
+    padding: 3.5rem;
+    color: white;
+  }
+  .contact-left h2 { color: white; margin-bottom: 1rem; }
+  .contact-left p  { opacity: 0.8; margin-bottom: 2rem; }
+  .contact-info-list { list-style: none; }
+  .contact-info-list li {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    opacity: 0.85;
+  }
+  .contact-right {
+    background: var(--white);
+    padding: 3.5rem;
+  }
+  .contact-right h3 { margin-bottom: 1.5rem; }
+  .form-group { margin-bottom: 1.25rem; }
+  .form-group label {
+    display: block; font-size: 0.85rem;
+    font-weight: 500; color: var(--text-mid);
+    margin-bottom: 0.4rem;
+  }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #dde4dd;
+    border-radius: var(--radius);
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    background: var(--cream);
+    transition: border-color 0.18s, box-shadow 0.18s;
+    outline: none;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--moss);
+    box-shadow: 0 0 0 3px rgba(61,90,62,.12);
+    background: white;
+  }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+
+  /* ── Footer ─────────────────────────────────────────────── */
+  footer {
+    background: var(--text-dark);
+    color: rgba(255,255,255,0.6);
+    padding: 3.5rem 0 2rem;
+  }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+  }
+  .footer-brand .nav-logo { color: white; font-size: 1.2rem; margin-bottom: 0.75rem; }
+  .footer-brand p { font-size: 0.88rem; max-width: 30ch; }
+  .footer-col h4 { color: white; font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 0.05em; }
+  .footer-col ul  { list-style: none; }
+  .footer-col li  { padding: 0.3rem 0; }
+  .footer-col a   { font-size: 0.88rem; transition: color 0.15s; }
+  .footer-col a:hover { color: white; }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 1.5rem; font-size: 0.82rem;
+  }
+
+  /* ── Responsive ─────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .nav-links, .nav-cta { display: none; }
+    .nav-hamburger { display: flex; }
+
+    .custom-section { grid-template-columns: 1fr; }
+    .custom-visual  { display: none; }
+
+    .contact-split  { grid-template-columns: 1fr; }
+    .contact-left   { padding: 2.5rem 1.5rem; }
+    .contact-right  { padding: 2.5rem 1.5rem; }
+
+    .footer-inner   { grid-template-columns: 1fr 1fr; }
+    .footer-brand   { grid-column: 1 / -1; }
+    .footer-bottom  { flex-direction: column; gap: 0.5rem; text-align: center; }
+
+    .hero-badge { display: none; }
+    .hero-btns  { flex-direction: column; }
+    .hero-btns .btn { text-align: center; }
+
+    .section { padding: 4rem 0; }
+  }
+
+  @media (max-width: 480px) {
+    .footer-inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ░░ NAVIGATION ░░ -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">
+        <span>🌿</span> Moss &amp; Glass
+      </a>
+      <ul class="nav-links">
+        <li><a href="#products">Shop</a></li>
+        <li><a href="#custom">Custom Orders</a></li>
+        <li><a href="#care">Care Guide</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary nav-cta" style="padding: 0.6rem 1.4rem; font-size: 0.88rem;">
+        Get in Touch
+      </a>
+      <div class="nav-hamburger" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ░░ HERO ░░ -->
+<section class="hero" id="home">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-leaf hero-leaf-1"></div>
+  <div class="hero-leaf hero-leaf-2"></div>
+  <div class="hero-leaf hero-leaf-3"></div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="eyebrow">Handmade with care · [Your City]</span>
+      <h1>Little worlds,<br><em>lovingly grown</em></h1>
+      <p>Each terrarium is made by hand using locally sourced moss, stones, and plants. Bring a tiny piece of nature into your home, office, or give the gift that keeps on growing.</p>
+      <div class="hero-btns">
+        <a href="#products" class="btn btn-white">Browse the Shop</a>
+        <a href="#custom"   class="btn btn-outline" style="color:white; border-color:rgba(255,255,255,.5)">Request Custom Order</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-badge">
+    <strong>100%</strong>
+    <span>handmade<br>with love</span>
+  </div>
+</section>
+
+<!-- ░░ FEATURES BAR ░░ -->
+<div class="features-bar">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">🌱</div>
+        <div>
+          <strong>All plants included</strong>
+          <span>Ready to place at home</span>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🚗</div>
+        <div>
+          <strong>Free local delivery</strong>
+          <span>Within [Your City] area</span>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">✉️</div>
+        <div>
+          <strong>Custom orders welcome</strong>
+          <span>Any size, any style</span>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">💬</div>
+        <div>
+          <strong>Lifetime care support</strong>
+          <span>We're here if you need us</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ░░ PRODUCTS ░░ -->
+<section class="section section-alt" id="products">
+  <div class="container">
+    <div class="section-label">
+      <span class="eyebrow">Featured Products</span>
+      <h2>Terrariums for every space</h2>
+      <p>From tiny desk companions to statement pieces — each one is unique and made to order.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- Card 1 -->
+      <article class="product-card">
+        <div class="product-card-image">
+          <div class="img-placeholder">🌿</div>
+          <!-- Replace with: <img src="your-photo.jpg" alt="Forest Floor Terrarium"> -->
+          <span class="care-badge easy">🌟 Easy care</span>
+        </div>
+        <div class="product-card-body">
+          <h3>Forest Floor Terrarium</h3>
+          <p class="product-desc">A lush miniature woodland scene with cushion moss, pebbles, and a small fern. Perfect for beginners.</p>
+          <div class="product-meta">
+            <span>📐 Medium · 20 cm</span>
+            <span>💧 Weekly water</span>
+          </div>
+          <div class="product-card-footer">
+            <span class="price">€45</span>
+            <a href="#contact" class="btn btn-primary" style="padding:0.6rem 1.25rem; font-size:0.88rem;">Order Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="product-card">
+        <div class="product-card-image">
+          <div class="img-placeholder" style="background: linear-gradient(160deg, #dce4f0 0%, #c8d8e8 100%);">🪨</div>
+          <span class="care-badge low">💧 Low water</span>
+        </div>
+        <div class="product-card-body">
+          <h3>Desert Gem Terrarium</h3>
+          <p class="product-desc">Succulents and cacti nestled in coloured sand layers with polished stones. Zero fuss, maximum style.</p>
+          <div class="product-meta">
+            <span>📐 Small · 15 cm</span>
+            <span>💧 Monthly water</span>
+          </div>
+          <div class="product-card-footer">
+            <span class="price">€32</span>
+            <a href="#contact" class="btn btn-primary" style="padding:0.6rem 1.25rem; font-size:0.88rem;">Order Now</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="product-card">
+        <div class="product-card-image">
+          <div class="img-placeholder" style="background: linear-gradient(160deg, #e8f0dc 0%, #d4e8c8 100%);">🫙</div>
+          <span class="care-badge medium">⚡ Some care</span>
+        </div>
+        <div class="product-card-body">
+          <h3>Closed Bottle Ecosystem</h3>
+          <p class="product-desc">A self-sustaining sealed terrarium with tropical moss. Once set up, it virtually waters itself.</p>
+          <div class="product-meta">
+            <span>📐 Small · 18 cm</span>
+            <span>💧 Self-sustaining</span>
+          </div>
+          <div class="product-card-footer">
+            <span class="price">€55</span>
+            <a href="#contact" class="btn btn-primary" style="padding:0.6rem 1.25rem; font-size:0.88rem;">Order Now</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="text-align:center; margin-top:3rem;">
+      <a href="#contact" class="btn btn-outline">See full range — get in touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ WHY US ░░ -->
+<section class="section section-moss" id="about">
+  <div class="container">
+    <div class="section-label">
+      <span class="eyebrow">Why Moss &amp; Glass</span>
+      <h2>Made differently</h2>
+      <p>We're a small, one-person operation — which means every terrarium gets our full attention.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🤲</div>
+        <h3>100% handmade</h3>
+        <p>No machines, no shortcuts. Every piece is built, planted, and finished by hand in our small workshop.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌍</div>
+        <h3>Locally sourced</h3>
+        <p>We collect moss, rocks, and driftwood from local forests and riverbanks — sustainably and with permission.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📦</div>
+        <h3>Safe packaging</h3>
+        <p>Every terrarium ships in custom padded packaging with full care instructions tucked inside.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💌</div>
+        <h3>Real support</h3>
+        <p>Message us any time if your plant looks sad. We'll help — no questions asked.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ CUSTOM ORDERS ░░ -->
+<section class="section section-alt" id="custom">
+  <div class="container">
+    <div class="custom-section">
+      <div>
+        <span class="eyebrow">Custom Orders</span>
+        <h2>Something made just for you</h2>
+        <p style="color: var(--text-mid); margin: 1rem 0;">Have a special container? Want a particular style? Need a gift with a handwritten note? We love custom requests.</p>
+        <ul class="custom-steps">
+          <li>
+            <span class="step-num">1</span>
+            <div>
+              <strong>Tell us your vision</strong>
+              <span>Size, style, colour palette, and budget</span>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <div>
+              <strong>We'll sketch a plan</strong>
+              <span>You'll receive a quick mood-board for approval</span>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <div>
+              <strong>We build it by hand</strong>
+              <span>Allow 5–10 days for creation and curing</span>
+            </div>
+          </li>
+          <li>
+            <span class="step-num">4</span>
+            <div>
+              <strong>Delivery or pickup</strong>
+              <span>Free local delivery or collect in [Your City]</span>
+            </div>
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Request a Custom Terrarium</a>
+      </div>
+      <div class="custom-visual">🌱</div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ CARE TIPS ░░ -->
+<section class="section section-earth" id="care">
+  <div class="container">
+    <div class="section-label">
+      <span class="eyebrow">Care Guide</span>
+      <h2>Keeping your terrarium happy</h2>
+      <p>Good news: our terrariums are designed to be low-maintenance. Here's everything you need to know.</p>
+    </div>
+    <div class="care-grid">
+      <div class="care-card">
+        <div class="care-icon">☀️</div>
+        <h4>Light</h4>
+        <p>Place in bright, indirect light. A north-facing windowsill or 60 cm from a sunny window is ideal. Avoid harsh direct sun which can scorch leaves.</p>
+      </div>
+      <div class="care-card">
+        <div class="care-icon">💧</div>
+        <h4>Watering</h4>
+        <p>Open terrariums: water lightly once a week. Closed terrariums: mist once a month or when the glass looks completely clear of condensation.</p>
+      </div>
+      <div class="care-card">
+        <div class="care-icon">🌡️</div>
+        <h4>Temperature</h4>
+        <p>Keep between 15–25°C. Avoid placing near radiators, air vents, or draughty windows. Room temperature is usually perfect.</p>
+      </div>
+      <div class="care-card">
+        <div class="care-icon">✂️</div>
+        <h4>Trimming</h4>
+        <p>If plants grow too large, trim carefully with small scissors. Remove any yellowed leaves promptly to keep the ecosystem healthy.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="#contact" class="btn btn-outline" style="border-color: var(--earth); color: var(--earth);">Ask a care question</a>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ TESTIMONIALS ░░ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-label">
+      <span class="eyebrow">Happy Customers</span>
+      <h2>What people are saying</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>I ordered a custom terrarium as a wedding gift and it was absolutely stunning. The couple still messages me photos of it growing.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">SL</div>
+          <div>
+            <strong>Sophie L.</strong>
+            <span>Local customer</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>I know nothing about plants but this desert terrarium has been on my desk for six months and looks perfect. So easy to care for.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">MK</div>
+          <div>
+            <strong>Max K.</strong>
+            <span>Online order</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>The packaging was incredible — arrived completely intact. And the care guide inside was so helpful. Will be ordering again soon.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">AR</div>
+          <div>
+            <strong>Anna R.</strong>
+            <span>Repeat customer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ CONTACT / CTA ░░ -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-split">
+      <div class="contact-left">
+        <span class="eyebrow" style="color:rgba(255,255,255,0.6)">Get in touch</span>
+        <h2>Ready to order or have a question?</h2>
+        <p>Whether you want to buy a ready-made piece, discuss a custom order, or just ask about plant care — we'd love to hear from you.</p>
+        <ul class="contact-info-list">
+          <li>📍 [Your City], Germany</li>
+          <li>📧 hello@[yourbusiness].com</li>
+          <li>📱 [Your phone / WhatsApp]</li>
+          <li>🕐 Replies within 24 hours</li>
+        </ul>
+        <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="#" class="btn btn-white" style="padding:0.6rem 1.25rem; font-size:0.88rem;">Instagram</a>
+          <a href="#" class="btn btn-white" style="padding:0.6rem 1.25rem; font-size:0.88rem;">Etsy Shop</a>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <h3>Send us a message</h3>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Your name</label>
+            <input type="text" id="name" placeholder="e.g. Anna Schmidt" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="inquiry">What are you interested in?</label>
+            <select id="inquiry">
+              <option value="">Select an option</option>
+              <option>Ready-made terrarium</option>
+              <option>Custom order</option>
+              <option>Care question</option>
+              <option>Gift enquiry</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Your message</label>
+            <textarea id="message" placeholder="Tell us what you're looking for..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Send Message →</button>
+        </form>
+        <div id="form-success" style="display:none; text-align:center; padding:2rem; color:var(--moss);">
+          <div style="font-size:2rem; margin-bottom:0.75rem;">🌿</div>
+          <strong>Message sent!</strong>
+          <p style="color:var(--text-mid); font-size:0.9rem; margin-top:0.4rem;">We'll be in touch within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FOOTER ░░ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">🌿 Moss &amp; Glass</div>
+        <p>Handmade terrariums crafted with care in [Your City]. Bringing a little nature indoors, one tiny world at a time.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#products">All terrariums</a></li>
+          <li><a href="#custom">Custom orders</a></li>
+          <li><a href="#contact">Gift enquiries</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#care">Care guide</a></li>
+          <li><a href="#about">About us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Moss &amp; Glass. All rights reserved.</span>
+      <span>Made with 🌿 in [Your City]</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu(btn) {
+    const links = document.querySelector('.nav-links');
+    const navCta = document.querySelector('.nav-cta');
+    const isOpen = links.style.display === 'flex';
+    if (isOpen) {
+      links.style.display = '';
+      navCta.style.display = '';
+    } else {
+      links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:white;padding:1.5rem;gap:1rem;box-shadow:0 8px 24px rgba(0,0,0,.1);z-index:200;';
+      navCta.style.display = '';
+    }
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    form.style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+    // TODO: Connect to a free form service like Formspree (https://formspree.io)
+    // Replace the form action with: <form action="https://formspree.io/f/YOUR_ID" method="POST">
+  }
+
+  // Smooth reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.product-card, .why-card, .care-card, .testimonial-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
