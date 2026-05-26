@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 
+<!DOCTYPE html>
+
 <!-- saved from url=(0048)file:///C:/Users/acer/Downloads/index%20(5).html -->
 <html lang="en"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -8,7 +10,7 @@
 <meta content="Shop custom handmade terrariums, book a build consultation, browse latest builds, and read customer success stories from The Wilderness Forge." name="description"/>
 <link href="https://fonts.googleapis.com/" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;family=DM+Sans:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -58,7 +60,7 @@
   .hero h1 em { font-style:italic; color:#b8ddb9; }
   .hero p { color:rgba(255,255,255,.82); font-size:1.15rem; max-width:54ch; margin-bottom:2rem; }
   .hero-btns { display:flex; gap:1rem; flex-wrap:wrap; }
-  .hero-stats { position:absolute; right:5%; bottom:2.8rem; z-index:2; display:grid; grid-template-columns:repeat(3,1fr); gap:.8rem; }
+  .hero-stats { position:relative; z-index:2; display:flex; gap:.8rem; flex-wrap:wrap; margin-top:2rem; }
   .stat-card { min-width:112px; background:var(--glass); border:1px solid rgba(255,255,255,.34); border-radius:var(--radius-lg); padding:1rem; text-align:center; box-shadow:0 4px 20px rgba(0,0,0,.08); }
   .stat-card strong { display:block; font-family:var(--serif); font-size:1.8rem; color:var(--moss); line-height:1; }
   .stat-card span { font-size:.78rem; color:var(--text-mid); }
@@ -211,24 +213,36 @@
     .footer-bottom { flex-direction:column; text-align:center; }
     .about-left,.about-right,.contact-left,.contact-right,.maker-left,.maker-right { padding:2.2rem 1.5rem; }
   }
+
+  /* INSTAGRAM HIGHLIGHT */
+  .ig-hero-bar { background:linear-gradient(90deg,#3d5a3e 0%,#5a7d5b 100%); padding:1.1rem 0; border-bottom:1px solid rgba(61,90,62,.2); }
+  .ig-hero-inner { display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; }
+  .ig-hero-left { display:flex; align-items:center; gap:1rem; }
+  .ig-camera { width:52px; height:52px; border-radius:14px; flex-shrink:0; background:linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7); display:flex; align-items:center; justify-content:center; font-size:1.6rem; box-shadow:0 4px 16px rgba(238,42,123,.35); }
+  .ig-hero-text strong { display:block; color:white; font-size:1rem; font-weight:700; margin-bottom:2px; }
+  .ig-hero-text span { font-size:.85rem; color:rgba(255,255,255,.75); }
+  .ig-hero-btn { display:inline-flex; align-items:center; gap:.5rem; background:white; color:#3d5a3e; padding:.65rem 1.4rem; border-radius:999px; font-weight:700; font-size:.9rem; box-shadow:0 4px 16px rgba(0,0,0,.12); transition:.2s ease; white-space:nowrap; border:none; cursor:pointer; text-decoration:none; }
+  .ig-hero-btn:hover { background:#eef3ee; transform:translateY(-2px); }
+  .ig-pulse { display:inline-block; width:8px; height:8px; border-radius:50%; background:#ee2a7b; margin-right:4px; animation:igpulse 1.8s ease-in-out infinite; }
+  @keyframes igpulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+  @media (max-width:600px) { .ig-hero-inner{justify-content:center;text-align:center} .ig-hero-left{flex-direction:column} }
 </style>
 </head>
 <body>
-
 <!-- NAV -->
 <nav>
 <div class="container nav-inner">
-<a class="nav-logo" href="file:///C:/Users/acer/Downloads/index%20(5).html#home"><span>🌿The Wilderness Forge🌿</span></a>
+<a class="nav-logo" href="#home"><span>🌿The Wilderness Forge🌿</span></a>
 <ul class="nav-links" id="navLinks">
-<li><a href="file:///C:/Users/acer/Downloads/index%20(5).html#shop">Shop</a></li>
-<li><a href="file:///C:/Users/acer/Downloads/index%20(5).html#maker">About the Maker</a></li>
-<li><a href="file:///C:/Users/acer/Downloads/index%20(5).html#book">Book</a></li>
-<li><a href="file:///C:/Users/acer/Downloads/index%20(5).html#latest">Latest Builds</a></li>
-<li><a href="file:///C:/Users/acer/Downloads/index%20(5).html#stories">Success Stories</a></li>
-<li><a href="file:///C:/Users/acer/Downloads/index%20(5).html#care">Care</a></li>
-<li><a href="file:///C:/Users/acer/Downloads/index%20(5).html#contact">Contact</a></li>
+<li><a href="#shop">Shop</a></li>
+<li><a href="#maker">About the Maker</a></li>
+<li><a href="#book">Book</a></li>
+<li><a href="#latest">Latest Builds</a></li>
+<li><a href="#stories">Success Stories</a></li>
+<li><a href="#care">Care</a></li>
+<li><a href="#contact">Contact</a></li>
 </ul>
-<a class="btn btn-primary btn-small nav-cta" href="file:///C:/Users/acer/Downloads/index%20(5).html#book">Book a Custom Build</a>
+<a class="btn btn-primary btn-small nav-cta" href="#book">Book a Custom Build</a>
 <button aria-label="Open navigation" class="nav-hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </div>
 </nav>
@@ -240,15 +254,15 @@
 <h1>Bring a tiny <em>living world</em> <span>into your space</span></h1>
 <p>Shop ready-made terrariums, book a custom design consultation, and browse the newest builds made with moss, stone, glass, and a lot of care.</p>
 <div class="hero-btns">
-<a class="btn btn-white" href="file:///C:/Users/acer/Downloads/index%20(5).html#shop">Shop Terrariums</a>
-<a class="btn btn-outline" href="file:///C:/Users/acer/Downloads/index%20(5).html#book" style="color:white;border-color:rgba(255,255,255,.55)">Book a Custom Order</a>
-</div>
-</div></div>
-<div class="hero-stats">
+<a class="btn btn-white" href="#shop">Shop Terrariums</a>
+<a class="btn btn-outline" href="#book" style="color:white;border-color:rgba(255,255,255,.55)">Book a Custom Order</a>
+<a class="btn btn-outline" href="https://www.instagram.com/the_wilderness_forge?igsh=cWs1azkxYWdobWRw" style="color:white;border-color:rgba(255,255,255,.55)" target="_blank">📸 Follow our Builds</a></div><div class="hero-stats">
 <div class="stat-card"><strong>35+</strong><span>happy homes</span></div>
 <div class="stat-card"><strong>5★</strong><span>customer love</span></div>
 <div class="stat-card"><strong>100%</strong><span>handmade</span></div>
 </div>
+</div></div>
+
 </section>
 <!-- FEATURES BAR -->
 <div class="features-bar"><div class="container"><div class="features-grid">
@@ -256,7 +270,20 @@
 <div class="feature-item"><div class="feature-icon">📅</div><div><strong>Book a consultation</strong><span>Plan your custom terrarium</span></div></div>
 <div class="feature-item"><div class="feature-icon">🖼️</div><div><strong>Latest build gallery</strong><span>Fresh photos from the workshop</span></div></div>
 <div class="feature-item"><div class="feature-icon">💬</div><div><strong>Aftercare support</strong><span>Ask questions after delivery</span></div></div>
-</div></div></div>
+</div></div></div><div class="ig-hero-bar">
+<div class="container ig-hero-inner">
+<div class="ig-hero-left">
+<div class="ig-camera">📸</div>
+<div class="ig-hero-text">
+<strong>Watch every terrarium being built — live on Instagram</strong>
+<span>Behind-the-scenes builds, time-lapses &amp; plant selections · <strong style="color:white;">@the_wilderness_forge</strong></span>
+</div>
+</div>
+<a class="ig-hero-btn" href="https://www.instagram.com/the_wilderness_forge?igsh=cWs1azkxYWdobWRw" target="_blank">
+<span class="ig-pulse"></span>📷 Follow on Instagram
+    </a>
+</div>
+</div>
 <!-- ABOUT THE MAKER (new section, same split style as About/Contact) -->
 <section class="section section-moss" id="maker"><div class="container">
 <div class="section-label">
@@ -290,7 +317,7 @@
 <div class="section-label">
 <span class="eyebrow">Shop</span>
 <h2>Buy or reserve a terrarium</h2>
-<p><div class="" data-is-intersecting="true" data-turn-id-container="6a79f123-de87-4d4c-b1cd-7602d7472a6b"><section class="text-token-text-primary w-full focus:outline-none has-data-writing-block:pointer-events-none [&amp;:has([data-writing-block])&gt;*]:pointer-events-auto R6Vx5W_threadScrollVars scroll-mb-[calc(var(--scroll-root-safe-area-inset-bottom,0px)+var(--thread-response-height))] scroll-mt-(--header-height)" data-scroll-anchor="false" data-testid="conversation-turn-9" data-turn="user" data-turn-id="6a79f123-de87-4d4c-b1cd-7602d7472a6b" data-turn-id-container="6a79f123-de87-4d4c-b1cd-7602d7472a6b" dir="auto"></section></div><div class="" data-is-intersecting="true" data-turn-id-container="request-WEB:b13bc216-870c-4445-b7be-4494fd7d6930-4"><section class="text-token-text-primary w-full focus:outline-none has-data-writing-block:pointer-events-none [&amp;:has([data-writing-block])&gt;*]:pointer-events-auto R6Vx5W_threadScrollVars scroll-mb-[calc(var(--scroll-root-safe-area-inset-bottom,0px)+var(--thread-response-height))] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]" data-scroll-anchor="false" data-testid="conversation-turn-10" data-turn="assistant" data-turn-id="request-WEB:b13bc216-870c-4445-b7be-4494fd7d6930-4" data-turn-id-container="request-WEB:b13bc216-870c-4445-b7be-4494fd7d6930-4" dir="auto"><div class="text-base my-auto mx-auto pb-10 [--thread-content-margin:var(--thread-content-margin-xs,calc(var(--spacing)*4))] @w-sm/main:[--thread-content-margin:var(--thread-content-margin-sm,calc(var(--spacing)*6))] @w-lg/main:[--thread-content-margin:var(--thread-content-margin-lg,calc(var(--spacing)*16))] px-(--thread-content-margin)"><div class="[--thread-content-max-width:40rem] @w-lg/main:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn"><div class="flex max-w-full flex-col gap-4 grow"><div class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal outline-none keyboard-focused:focus-ring [.text-message+&amp;]:mt-1" data-message-author-role="assistant" data-message-id="ccca5f2b-6cf8-4674-8b82-833c4f9185cf" data-message-model-slug="gpt-5-5-thinking" data-turn-start-message="true" dir="auto" tabindex="0"><div class="flex w-full flex-col gap-1 empty:hidden"><div class="markdown prose dark:prose-invert wrap-break-word w-full light markdown-new-styling"><p data-end="141" data-is-last-node="" data-is-only-node="" data-start="0">Please note that items marked <strong data-end="81" data-start="63">“Out of Stock”</strong> can be delivered within <strong data-end="117" data-start="106">14 days</strong> after placing an order. Available stock can be delivered within <strong data-end="58" data-start="40">2 working days</strong>. </p></div></div></div></div></div></div></section></div></p>
+</div></div></div></div></div></div></section></div></p>
 </div>
 <div class="tabs" role="tablist">
 <button class="tab-btn active" data-tab="all">All</button>
@@ -302,14 +329,11 @@
 <article class="card product" data-category="closed" data-id="0" style="display: none; opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box">
 <img alt="Rainforest Jar terrarium" id="img-0" onclick="openImageGallery(0)" onerror="this.style.display='none'" src="https://thewildernessforge.github.io/images/1.JPG"/>
-
-
 <span class="badge">Self-sustaining</span>
 <span class="image-count" id="count-0">📷 1 photo</span>
 <div class="thumb-strip" id="thumbs-0"></div>
 </div>
 <div class="card-body">
-
 <h3>Beach Forest - premium</h3>
 <p>A lush closed ecosystem layered with cushion moss, fittonia, and activated charcoal. A miniature rainforest sealed in glass.</p>
 <div class="details-button-row"><button class="btn btn-outline btn-small" onclick="openDetails(0)">Additional details</button></div>
@@ -327,14 +351,11 @@
 <article class="card product" data-category="closed" data-id="1" style="display: none; opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box">
 <img alt="Forest Mist terrarium" id="img-1" onclick="openImageGallery(1)" onerror="this.style.display='none'" src="https://thewildernessforge.github.io/images/2.JPG"/>
-
-
 <span class="badge">Closed ecosystem</span>
 <span class="image-count" id="count-1">📷 1 photo</span>
 <div class="thumb-strip" id="thumbs-1"></div>
 </div>
 <div class="card-body">
-
 <h3>Forest Mist</h3>
 <p>Dense moss layers and creeping plants with fittonia create a misty woodland atmosphere in a sealed jar.</p>
 <div class="details-button-row"><button class="btn btn-outline btn-small" onclick="openDetails(1)">Additional details</button></div>
@@ -352,14 +373,11 @@
 <article class="card product" data-category="closed" data-id="2" style="display: none; opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box">
 <img alt="Mossy Ruins terrarium" id="img-2" onclick="openImageGallery(2)" onerror="this.style.display='none'" src="https://thewildernessforge.github.io/images/3.jpg"/>
-
-
 <span class="badge">Handmade</span>
 <span class="image-count" id="count-2">📷 1 photo</span>
 <div class="thumb-strip" id="thumbs-2"></div>
 </div>
 <div class="card-body">
-
 <h3>Succulant bowl</h3>
 <p>Succulant bowl to trive for this hot summer. This bowl will trive with practically no maintanance. </p>
 <div class="details-button-row"><button class="btn btn-outline btn-small" onclick="openDetails(2)">Additional details</button></div>
@@ -377,14 +395,11 @@
 <article class="card product" data-category="closed" data-id="3" style="display: none; opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box">
 <img alt="Primordial Swamp terrarium" id="img-3" onclick="openImageGallery(3)" onerror="this.style.display='none'" src="https://thewildernessforge.github.io/images/4.jpg"/>
-
-
 <span class="badge">Deep ecosystem</span>
 <span class="image-count" id="count-3">📷 1 photo</span>
 <div class="thumb-strip" id="thumbs-3"></div>
 </div>
 <div class="card-body">
-
 <h3>Mountain waterfall</h3>
 <p>Wet substrate, driftwood and carefully selected plants create a primal, atmospheric desktop worldfall full of character.</p>
 <div class="details-button-row"><button class="btn btn-outline btn-small" onclick="openDetails(3)">Additional details</button></div>
@@ -402,14 +417,11 @@
 <article class="card product" data-category="closed" data-id="4" style="display: none; opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box">
 <img alt="The Ancient Bog terrarium" id="img-4" onclick="openImageGallery(4)" onerror="this.style.display='none'" src="https://thewildernessforge.github.io/images/5.jpg"/>
-
-
 <span class="badge">Self-sustaining</span>
 <span class="image-count" id="count-4">📷 1 photo</span>
 <div class="thumb-strip" id="thumbs-4"></div>
 </div>
 <div class="card-body">
-
 <h3>The Ancient Bog</h3>
 <p>Sphagnum moss and bog-loving plants sealed in glass — moody, rich, and endlessly fascinating.</p>
 <div class="details-button-row"><button class="btn btn-outline btn-small" onclick="openDetails(4)">Additional details</button></div>
@@ -427,14 +439,11 @@
 <article class="card product" data-category="closed" data-id="5" style="display: none; opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box">
 <img alt="Fern Cathedral terrarium" id="img-5" onclick="openImageGallery(5)" onerror="this.style.display='none'" src="https://thewildernessforge.github.io/images/6.jpg"/>
-
-
 <span class="badge">Premium</span>
 <span class="image-count" id="count-5">📷 1 photo</span>
 <div class="thumb-strip" id="thumbs-5"></div>
 </div>
 <div class="card-body">
-
 <h3>Fern Forest</h3>
 <p>Micro ferns and creeping fig arch upward like forest ecosystem. Elegant and peaceful. inside a tiny jar.</p>
 <div class="details-button-row"><button class="btn btn-outline btn-small" onclick="openDetails(5)">Additional details</button></div>
@@ -452,14 +461,11 @@
 <article class="card product" data-category="closed" data-id="6" style="display: none; opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box">
 <img alt="Whispering Pines terrarium" id="img-6" onclick="openImageGallery(6)" onerror="this.style.display='none'" src="https://thewildernessforge.github.io/images/7.jpg"/>
-
-
 <span class="badge">Premium</span>
 <span class="image-count" id="count-6">📷 1 photo</span>
 <div class="thumb-strip" id="thumbs-6"></div>
 </div>
 <div class="card-body">
-
 <h3>Whispering Pines</h3>
 <p>A premium design with crushed aquosoil moss wall. Built to trive for years with low maintanance.</p>
 <div class="details-button-row"><button class="btn btn-outline btn-small" onclick="openDetails(6)">Additional details</button></div>
@@ -477,14 +483,11 @@
 <article class="card product" data-category="closed" data-id="7" style="display: none; opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box">
 <img alt="Cloud Forest terrarium" id="img-7" onclick="openImageGallery(7)" onerror="this.style.display='none'" src="https://thewildernessforge.github.io/images/8.jpeg"/>
-
-
 <span class="badge">Premium</span>
 <span class="image-count" id="count-7">📷 1 photo</span>
 <div class="thumb-strip" id="thumbs-7"></div>
 </div>
 <div class="card-body">
-
 <h3>Cloud Forest</h3>
 <p>High-humidity tropical build with selected moss and ferns. Fittonia plants add the beaty to the setup. </p>
 <div class="details-button-row"><button class="btn btn-outline btn-small" onclick="openDetails(7)">Additional details</button></div>
@@ -502,14 +505,11 @@
 <article class="card product" data-category="closed" data-id="8" style="display: none; opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box">
 <img alt="Glacial Basin terrarium" id="img-8" onclick="openImageGallery(8)" onerror="this.style.display='none'" src="https://thewildernessforge.github.io/images/9.jpeg"/>
-
-
 <span class="badge">Handmade</span>
 <span class="image-count" id="count-8">📷 1 photo</span>
 <div class="thumb-strip" id="thumbs-8"></div>
 </div>
 <div class="card-body">
-
 <h3>Beach </h3>
 <p>Beach-white pebbles, creeping fig, and beach sand, clean cold-landscape aesthetic. Low maintanance. </p>
 <div class="details-button-row"><button class="btn btn-outline btn-small" onclick="openDetails(8)">Additional details</button></div>
@@ -527,14 +527,11 @@
 <article class="card product" data-category="closed" data-id="9" style="display: none; opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box">
 <img alt="Volcanic Islet terrarium" id="img-9" onclick="openImageGallery(9)" onerror="this.style.display='none'" src="https://thewildernessforge.github.io/images/10.jpeg"/>
-
-
 <span class="badge">Self-sustaining</span>
 <span class="image-count" id="count-9">📷 1 photo</span>
 <div class="thumb-strip" id="thumbs-9"></div>
 </div>
 <div class="card-body">
-
 <h3>Volcanic Islet</h3>
 <p>Black lava rock with bright selaginella moss — a dramatic volcanic island sealed inside glass.</p>
 <div class="details-button-row"><button class="btn btn-outline btn-small" onclick="openDetails(9)">Additional details</button></div>
@@ -552,14 +549,11 @@
 <article class="card product" data-category="closed" data-id="10" style="display: none; opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box">
 <img alt="Shadow Garden terrarium" id="img-10" onclick="openImageGallery(10)" onerror="this.style.display='none'" src="https://thewildernessforge.github.io/images/11.jpeg"/>
-
-
 <span class="badge">Closed ecosystem</span>
 <span class="image-count" id="count-10">📷 1 photo</span>
 <div class="thumb-strip" id="thumbs-10"></div>
 </div>
 <div class="card-body">
-
 <h3>Shadow Garden</h3>
 <p>Deep greens, near-black driftwood, and cork bark create a moody, dramatic living landscape.</p>
 <div class="details-button-row"><button class="btn btn-outline btn-small" onclick="openDetails(10)">Additional details</button></div>
@@ -577,14 +571,11 @@
 <article class="card product" data-category="closed" data-id="11" style="display: none; opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box">
 <img alt="River Bend terrarium" id="img-11" onclick="openImageGallery(11)" onerror="this.style.display='none'" src="https://thewildernessforge.github.io/images/12.jpeg"/>
-
-
 <span class="badge">Premium</span>
 <span class="image-count" id="count-11">📷 1 photo</span>
 <div class="thumb-strip" id="thumbs-11"></div>
 </div>
 <div class="card-body">
-
 <h3>Deep forest</h3>
 <p>A winding white sand river flows between deep green moss banks in this serene, natural sealed world.</p>
 <div class="details-button-row"><button class="btn btn-outline btn-small" onclick="openDetails(11)">Additional details</button></div>
@@ -602,14 +593,11 @@
 <article class="card product" data-category="closed" data-id="12" style="display: block; opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box">
 <img alt="Foxfire Hollow terrarium" id="img-12" onclick="openImageGallery(12)" onerror="this.style.display='none'" src="https://thewildernessforge.github.io/images/13.jpeg"/>
-
-
 <span class="badge">Limited edition</span>
 <span class="image-count" id="count-12">📷 1 photo</span>
 <div class="thumb-strip" id="thumbs-12"></div>
 </div>
 <div class="card-body">
-
 <h3>Beach Forest - Compact</h3>
 <p>A compact design with beach forest attractions. Inspiration from Ruegen city in Germany.</p>
 <div class="details-button-row"><button class="btn btn-outline btn-small" onclick="openDetails(12)">Additional details</button></div>
@@ -627,14 +615,11 @@
 <article class="card product" data-category="closed" data-id="13" style="display: block; opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box">
 <img alt="The Philosopher's Jar terrarium" id="img-13" onclick="openImageGallery(13)" onerror="this.style.display='none'" src="https://thewildernessforge.github.io/images/14.webp"/>
-
-
 <span class="badge">Minimalist</span>
 <span class="image-count" id="count-13">📷 1 photo</span>
 <div class="thumb-strip" id="thumbs-13"></div>
 </div>
 <div class="card-body">
-
 <h3>The Philosopher's Jar</h3>
 <p>Multiple elegant moss and ferns mound on river sand. Minimal, meditative, and quietly beautiful.</p>
 <div class="details-button-row"><button class="btn btn-outline btn-small" onclick="openDetails(13)">Additional details</button></div>
@@ -652,14 +637,11 @@
 <article class="card product" data-category="closed" data-id="14" style="display: block; opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box">
 <img alt="Enchanted Hollow terrarium" id="img-14" onclick="openImageGallery(14)" onerror="this.style.display='none'" src="https://thewildernessforge.github.io/images/15.jpg"/>
-
-
 <span class="badge">2 months old</span>
 <span class="image-count" id="count-14">📷 1 photo</span>
 <div class="thumb-strip" id="thumbs-14"></div>
 </div>
 <div class="card-body">
-
 <h3>Enchanted Hollow</h3>
 <p>A carved dragonstone surrounded by cushion moss and tiny flowering plants — full of quiet magic.</p>
 <div class="details-button-row"><button class="btn btn-outline btn-small" onclick="openDetails(14)">Additional details</button></div>
@@ -677,14 +659,11 @@
 <article class="card product" data-category="closed" data-id="15" style="display: block; opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box">
 <img alt="The Grand Archive terrarium" id="img-15" onclick="openImageGallery(15)" onerror="this.style.display='none'" src="https://thewildernessforge.github.io/images/16.jpg"/>
-
-
 <span class="badge">2 months old</span>
 <span class="image-count" id="count-15">📷 1 photo</span>
 <div class="thumb-strip" id="thumbs-15"></div>
 </div>
 <div class="card-body">
-
 <h3>The Grand Archive</h3>
 <p>A wide apothecary jar housing a dense layered ecosystem with six or more species. The ultimate statement piece.</p>
 <div class="details-button-row"><button class="btn btn-outline btn-small" onclick="openDetails(15)">Additional details</button></div>
@@ -702,7 +681,6 @@
 </div><!-- /productGrid -->
 <div class="shop-pagination" id="shopPagination"><button class="shop-arrow">‹</button><button class="shop-dot"></button><button class="shop-dot"></button><button class="shop-dot active"></button><button class="shop-arrow" disabled="">›</button></div>
 <!-- ADD NEW DESIGN PANEL -->
-
 </div></section>
 <!-- BOOK -->
 <section class="section section-moss" id="book"><div class="container">
@@ -719,7 +697,7 @@
 <li><strong>2.</strong><div><strong>Approve the concept</strong><br/><span>You receive a proposal before the build starts.</span></div></li>
 <li><strong>3.</strong><div><strong>Build &amp; pickup/delivery</strong><br/><span>Most builds are ready in 5–10 days.</span></div></li>
 </ul>
-<a class="btn btn-outline" href="file:///C:/Users/acer/Downloads/index%20(5).html#latest">See latest builds</a>
+<a class="btn btn-outline" href="#latest">See latest builds</a>
 </div>
 <div class="booking-card" style="opacity: 0; transform: translateY(24px); transition: opacity 0.5s, transform 0.5s;">
 <h3>Custom order request</h3>
@@ -747,8 +725,6 @@
 <article class="card" style="opacity: 0; transform: translateY(24px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box" style="background:linear-gradient(160deg,var(--moss-pale),#dce8dc)">
 <img alt="Moss Valley terrarium build" id="latest-img-0" onerror="this.style.display='none'" src="file:///C:/Users/acer/Downloads/index%20(5).html" style="display: none;"/>
-
-
 <span class="badge">New</span>
 </div>
 <div class="card-body">
@@ -760,8 +736,6 @@
 <article class="card" style="opacity: 0; transform: translateY(24px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box" style="background:linear-gradient(160deg,#e5eef4,#cddde7)">
 <img alt="Rain Cycle Jar" id="latest-img-1" onerror="this.style.display='none'" src="file:///C:/Users/acer/Downloads/index%20(5).html" style="display: none;"/>
-
-
 <span class="badge">Closed jar</span>
 </div>
 <div class="card-body">
@@ -773,8 +747,6 @@
 <article class="card" style="opacity: 0; transform: translateY(24px); transition: opacity 0.5s, transform 0.5s;">
 <div class="image-box" style="background:linear-gradient(160deg,#f1e7d8,#dcc19e)">
 <img alt="Warm Desert Bowl" id="latest-img-2" onerror="this.style.display='none'" src="file:///C:/Users/acer/Downloads/index%20(5).html" style="display: none;"/>
-
-
 <span class="badge">Succulent</span>
 </div>
 <div class="card-body">
@@ -789,7 +761,7 @@
 <h3>Tip: post a new build every week</h3>
 <p>Replace these placeholders with real photos, build names, and short stories. This helps customers trust your style before booking.</p>
 </div>
-<a class="btn btn-white" href="file:///C:/Users/acer/Downloads/index%20(5).html#book">Request something similar</a>
+<a class="btn btn-white" href="#book">Request something similar</a>
 </div>
 </div></section>
 <!-- SUCCESS STORIES -->
@@ -881,8 +853,8 @@
 <div class="nav-logo">🌿 The Wilderness Forge</div>
 <p>Custom handmade terrariums, tiny ecosystems, and gift-ready living worlds.</p>
 </div>
-<div><h4>Explore</h4><ul><li><a href="file:///C:/Users/acer/Downloads/index%20(5).html#shop">Shop</a></li><li><a href="file:///C:/Users/acer/Downloads/index%20(5).html#book">Book custom order</a></li><li><a href="file:///C:/Users/acer/Downloads/index%20(5).html#latest">Latest builds</a></li></ul></div>
-<div><h4>Support</h4><ul><li><a href="file:///C:/Users/acer/Downloads/index%20(5).html#maker">About the maker</a></li><li><a href="file:///C:/Users/acer/Downloads/index%20(5).html#stories">Success stories</a></li><li><a href="file:///C:/Users/acer/Downloads/index%20(5).html#care">Care guide</a></li><li><a href="file:///C:/Users/acer/Downloads/index%20(5).html#contact">Contact</a></li></ul></div>
+<div><h4>Explore</h4><ul><li><a href="#shop">Shop</a></li><li><a href="#book">Book custom order</a></li><li><a href="#latest">Latest builds</a></li></ul></div>
+<div><h4>Support</h4><ul><li><a href="#maker">About the maker</a></li><li><a href="#stories">Success stories</a></li><li><a href="#care">Care guide</a></li><li><a href="#contact">Contact</a></li></ul></div>
 </div>
 <div class="footer-bottom">
 <span>© 2026 The Wilderness Forge. All rights reserved.</span>
@@ -890,7 +862,6 @@
 </div>
 </div></footer>
 <!-- SAVE BAR -->
-
 <!-- ORDER MODAL -->
 <div aria-hidden="true" class="modal" id="orderModal"><div class="modal-card">
 <button class="modal-close" onclick="closeOrder()">×</button>
@@ -916,8 +887,8 @@
 <h2 id="detailsTitle">Terrarium details</h2>
 <div id="detailsBody"></div>
 <div class="details-modal-actions">
-<a class="btn btn-primary" href="file:///C:/Users/acer/Downloads/index%20(5).html#book" onclick="closeDetails()">Book something similar</a>
-<a class="btn btn-outline" href="file:///C:/Users/acer/Downloads/index%20(5).html#contact" onclick="closeDetails()">Ask a question</a>
+<a class="btn btn-primary" href="#book" onclick="closeDetails()">Book something similar</a>
+<a class="btn btn-outline" href="#contact" onclick="closeDetails()">Ask a question</a>
 </div>
 </div></div>
 <!-- IMAGE MODAL -->
